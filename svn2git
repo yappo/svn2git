@@ -112,6 +112,8 @@ L<git>, L<git-svn>
 The original Ruby svn2git from which I took the idea.
 L<http://github.com/jcoglan/svn2git/>
 
+this is yappo version L<http://github.com/yappo/svn2git/>
+
 
 =cut
 
