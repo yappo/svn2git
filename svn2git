@@ -169,12 +169,12 @@ sub fix_tags {
     my $tags = $Opts{tags} || 'tags/';
     $tags .= '/' unless $tags =~ m{/$};
     my @branches = map { s/^\s+//; s/\s+$//; $_ } `git branch -a`;
-    my @tags     = grep m{^\Q$tags/}, @branches;
+    my @tags     = grep m{^$tags}, @branches;
 
     print "Turning tag branches into git tags\n";
 
     for my $branch (@tags) {
-        my($tag) = $branch =~ m{^\Q$tags/(.*)};
+        my($tag) = $branch =~ m{^$tags(.*)};
         if (my $strip = $Opts{'strip-tag-prefix'}) {
             $tag =~ s{^$strip}{};
         }
